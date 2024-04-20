@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "grt-feed-backend"
+version = "0.1.0"
+description = ""
+authors = ["RG <goyalrohan2020@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.110.2"
+uvicorn = "^0.29.0"
+sqlalchemy = {extras = ["aysncio"], version = "^2.0.29"}
+pydantic = "^2.7.0"
+python-dotenv = "^1.0.1"
+pymysql = "^1.1.0"
+aiomysql = "^0.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
