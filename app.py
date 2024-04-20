@@ -7,11 +7,19 @@ load_dotenv()
 
 from cache import Cache
 from push_data import PushData
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Cache API",
     version="0.1",
     description="A simple API to add data to a cache and push it to a database",
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 cache = Cache()
 
