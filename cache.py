@@ -1,4 +1,5 @@
 import random
+from asyncio import sleep
 
 from sqlalchemy import insert
 
@@ -14,6 +15,8 @@ class Cache:
         self.busy_state = False
 
     def add(self, value: PushData):
+        while self.busy_state:
+            sleep(0.1)
         key_range_max = 1000000000000000000000
         key = random.randint(0, key_range_max)
         while key in self.cache:
